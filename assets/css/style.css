@@ -200,10 +200,29 @@ header .logo img{
   margin-top: 32px;
   display: block;
   max-width: 133px;
+  position: relative;
+  transition: .4s;
+  z-index: 11;
+}
+.banner .banner-left .sign_up-btn::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: -1;
+  transition: .4s;
+  border-radius: 4px;
 }
 .banner .banner-left .sign_up-btn:hover{
-  background-color: #fff;
   color: #2783F3;
+  background-color: transparent;
+}
+.banner .banner-left .sign_up-btn:hover::after{
+  height: 100%;
 }
 .banner .banner-right{
   max-width: 393px;
@@ -246,7 +265,7 @@ header .logo img{
   background-repeat: no-repeat;
   object-fit: contain;
   left: 0;
-  top: -40%;
+  top: -35%;
   z-index: -1;
 }
 .contact-sub{
@@ -267,7 +286,7 @@ header .logo img{
   padding-bottom: 16px;
 }
 .contact-sub p{
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   color: rgba(3, 6, 47, 0.7);
@@ -295,7 +314,7 @@ header .logo img{
   resize: none;
 }
 
-
+/* Custom Select */
 .select_wrap{
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -373,6 +392,22 @@ header .logo img{
   top: 25px;
   transform: rotate(-225deg);
 }
+.contact-sub .inputs input.submit-btn{
+  width: 93px;
+  height: 48px;
+  border-radius: 4px;
+  background-color: #2783F3;
+  border: 0;
+  font-size: 15px;
+  color: #FFFFFF;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: .3s;
+}
 /* ======================================= */
               /* Responsive */
 /* ======================================= */
@@ -380,5 +415,173 @@ header .logo img{
   .container{
     max-width: 1070px;
     margin: auto;
+  }
+}
+@media (max-width:1199px){
+  header {
+    padding: 15px 0px;
+  }
+  .banner{
+    padding-top: 70px;
+  }
+  .banner .banner-right img{
+    max-width: 300px;
+    margin: auto;
+  }
+  .contact-heading {
+    padding: 50px 0px 100px 0px;
+  }
+  .contact-heading .container::before {
+    top: -30%;
+  }
+}
+@media(max-width: 991px){
+  .banner {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 93%, 91% 100%, 0% 75%);
+  }
+  .banner .banner-right {
+    max-width: 300px;
+  }
+  .banner .banner-left h1 {
+    font-size: 35px;
+  }
+  .banner .banner-left p {
+    font-size: 16px;
+  }
+  .banner .banner-right img {
+    width: 70%;
+    object-fit: contain;
+  }
+  .contact-sub h2 {
+    font-size: 35px;
+  }
+  .contact-sub p {
+    font-size: 16px;
+  }
+  .contact-heading .container::before {
+    top: -22%;
+    width: 185px;
+    height: 130px;
+  }
+}
+@media(max-width: 767px){
+  .banner{
+    padding-top: 90px;
+  }
+  .banner .banner-sub {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .banner .banner-left {
+    max-width: 100%;
+  }
+  .banner .banner-right {
+    width: 100%;
+    max-width: 100%;
+    padding-top: 65px;
+  }
+  .banner {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 90% 100%, 0% 87%);
+  }
+  .banner h1 br{
+    display: none;
+  }
+  .banner .banner-left h1 {
+    font-size: 30px;
+  }
+  .banner .banner-left p {
+    font-size: 15px;
+  }
+  .contact-sub h2 {
+    font-size: 30px;
+  }
+  .contact-sub p {
+    font-size: 14px;
+  }
+  .contact-sub {
+    padding: 35px;
+  }
+  .contact-sub-head {
+    padding-bottom: 10px;
+  }
+  .contact-sub .inputs label {
+    font-size: 14px;
+  }
+  .contact-heading {
+    padding-bottom: 50px;
+  }
+}
+@media(max-width:575px){
+  .container{
+    padding: 0px 25px;
+  }
+  .banner{
+    margin-top: 0;
+  }
+  .banner .banner-left h1 {
+    font-size: 25px;
+    padding-bottom: 15px;
+  }
+  .banner .banner-left p{
+    font-size: 14px;
+  }
+  .banner .banner-left .sign_up-btn {
+    font-size: 13px;
+    text-align: center;
+    padding: 10px 20px;
+  }
+  .contact-sub h2 {
+    font-size: 25px;
+  }
+  .contact-sub p {
+    font-size: 13px;
+  }
+  .contact-heading .container::before {
+    top: -19%;
+    width: 100px;
+    height: 75px;
+    left: 5%;
+  }
+  .contact-heading {
+    padding-top: 0;
+  }
+  .contact-sub .inputs input, .contact-sub .inputs select, .contact-sub .inputs textarea {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    padding: 12px;
+    border-radius: 4px;
+    color: #03062F;
+    font-size: 13px;
+  }
+  .contact-sub .inputs input.submit-btn{
+    font-size: 13px;
+    height: 33px;
+  }
+  .contact-sub .inputs {
+    margin-top: 15px;
+  }
+  .contact-sub {
+    padding: 28px;
+  }
+}
+@media(max-width: 480px){
+  .banner{
+    padding-top: 70px;
+  }
+  .banner .banner-left h1 {
+    font-size: 22px;
+    padding-bottom: 15px;
+  }
+  .banner .banner-left p{
+    font-size: 13px;
+  }
+  .contact-sub h2 {
+    font-size: 22px;
+  }
+  .contact-sub p {
+    font-size: 11px;
+  }
+  .contact-sub {
+    padding: 17px;
   }
 }

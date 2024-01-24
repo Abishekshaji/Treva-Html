@@ -22,6 +22,7 @@ $(document).ready(function () {
         }
     }
 })
+// Custom select
 $(".default_option").click(function(){
   $(this).parent().toggleClass("active");
 })
@@ -31,6 +32,7 @@ $(".select_ul li").click(function(){
   $(".default_option li").html(currentele);
   $(this).parents(".select_wrap").removeClass("active");
 })
+// Header Class adding
 $(window).scroll(function(){
   var scrolltop = $(window).scrollTop();
   var header = $("header");
